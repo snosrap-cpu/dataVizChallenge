@@ -224,6 +224,7 @@ First few rows of 2010 data:
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Question 1: Hypothesis Formation</strong> - Why might high altitude affect baseball performance? Is Coors Field affected by high altitude?</p>
+<p><strong>Answer 1: Hypothesis Formation</strong> - The higher the altitude the thinner the air, meaning less resistance allowing for objects to travel farther with less force. Coors Field is affected by high altitude.</p>
 </div>
 </div>
 </section>
@@ -286,6 +287,7 @@ First few rows of 2010 data:
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Question 1: Data Aggregation Strategy</strong> - How many games are in the dataset? Why do we aggregate individual games into stadium averages before we start the visualization process?</p>
+<p><strong>Answer 1: Data Aggregation Strategy</strong> - So according to the first dataset before the group by each team plays 162 games. If there are 30 teams and we are grouping by their home games, then each row is the average of all 81 home games for each of the 30 teams. That is if you're asking about the dataset after transformation if you are asking about the orignal dataset, that has 2429 games. Well if the goal is to figure out if Coors Field in Denver, Colorado is truly the most run-friendly baseball stadium then we would have to group by team which lets us group by stadium to get the average of runs of all stadiums to do the comparison.</p>
 </div>
 </div>
 </section>
@@ -352,6 +354,8 @@ First few rows of 2010 data:
 <div class="callout-body-container callout-body">
 <p><strong>Question 1: Geometry Choices</strong> - Why is a horizontal bar chart better than a scatter plot for this data? - When would you choose a vertical bar chart over horizontal?</p>
 <p><strong>Question 2: Aesthetic Mappings</strong> - What does the color highlighting accomplish in Approach 4? - How does position (x/y) compare to color for encoding data?</p>
+<p><strong>Answer 1: Geometry Choices</strong> - When looking for a specific answer like we are here a chart in which you can highlight the answer is ideal, a scatter plot is best used to visualize relationships, where's here we are trying to answer a binary question. We can use a vertical bar chart to easily spot the result with the 'most'.</p>
+<p><strong>Answer 2: Aesthetic Mappings</strong> - Pulls the viewer to the result of the spicific stadium you are presenting/studying. - I'am confused by this question but the code is saying create a bar graph with home (stadium) as the y variable and totalRuns (average runs) as the x variable and to color row where stadium is COL darkochid and all the rest lightgrey.</p>
 </div>
 </div>
 </section>
@@ -436,6 +440,22 @@ Colorado is 20.8% above league average</code></pre>
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Question 1: Professional Formatting</strong> - What elements make this visualization suitable for a business presentation? - Is the annotation on the visualization helpful? Can you fix its placement?</p>
+<p><strong>Answer 1: Professional Formatting</strong> - The coloring the key labeling the coloring as identifying Colorado Rockies stadium. The labeling of the x and y axis and the annotation. The annotation is helpful in giving the exact for the target. The fix for the annotation is below.</p>  
+</div>
+</div>
+<div id="cell-stage-4-formatting" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f"COL: </span><span class="sc">{</span>colorado_runs<span class="sc">:.2f}</span><span class="ss"> runs/game"</span>, </span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(colorado_runs, colorado_index <span class="op">+</span> <span class="fl">20</span>), </span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>            xytext<span class="op">=</span>(colorado_runs <span class="op">+</span> <span class="fl">0.5</span>, colorado_index <span class="op">+</span> <span class="fl">20</span>),</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span><span class="st">'darkorchid'</span>, lw<span class="op">=</span><span class="dv">2</span>),</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">10</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, color<span class="op">=</span><span class="st">'darkorchid'</span>)</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/stage-4-formatting-output-1.png" id="stage-4-formatting" width="758" height="567" class="figure-img"></p>
+</figure>
 </div>
 </div>
 </section>
